@@ -12,11 +12,11 @@
 {%for prodotto in prodotti%}
 <tr>
     <td><p>{{prodotto[0]}}</p></td>
-    <td><p>{{prodotto[1]}}</p></td>
-    <td><p>{{prodotto[2]}}</p></td>
-    <td><p>{{prodotto[3]}}</p></td>
-    <td><p>{{prodotto[4]}}</p></td>
-    <td><p>{{prodotto[5]}}</p></td>
+    <td>{{prodotto[1]}}</td>
+    <td>{{prodotto[2]}}</td>
+    <td><a href="{{url_for('Categories',categoryID)}}"{{prodotto[3]}}</td>
+    <td>{{prodotto[4]}}</td>
+    <td>{{prodotto[5]}}</td>
 </tr>
 {%endfor%}
 </table>
