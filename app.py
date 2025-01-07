@@ -26,8 +26,8 @@ def products():
 
 def categories(categoryID):
     cursor = mysql.connection.cursor()
-    query = "SELECT * from products where categoryID="+categoryID
-    cursor.execute(query)
+    query = "SELECT * from products where categoryID=?" #il ? è un placeholder
+    cursor.execute(query,(categoryID,))
     dati = cursor.fetchall()
 
     return render_template("categories.html",titolo="Categorie", dati=dati)
