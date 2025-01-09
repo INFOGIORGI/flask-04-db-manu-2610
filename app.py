@@ -26,7 +26,7 @@ def products():
 
 def categories(categoryID):
     cursor = mysql.connection.cursor()
-    query = "SELECT * from products where categoryID=?" #          il ? è un placeholder
+    query = "SELECT * from products where categoryID=?" #il ? è un placeholder
     cursor.execute(query,(categoryID,))
     dati = cursor.fetchall()
 
