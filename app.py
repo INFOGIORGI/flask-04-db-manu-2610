@@ -27,11 +27,10 @@ def products():
 @app.route("/category/<categoryID>")
 def category(categoryID):
     cursor = mysql.connection.cursor()
-    query = "SELECT * FROM categories WHERE categoryID="+categoryID
-    cursor.execute(query)
+    query = "SELECT * FROM categories WHERE categoryID = %s"
+    cursor.execute(query,(categoryID,))
     dati = cursor.fetchall()
 
-    print(dati)
     return render_template("category.html",dati=dati)
 
 app.run(debug=True)

@@ -1,12 +1,12 @@
 {%extends 'base.html'%}
-{%block body%}
+{%block contenutoPagina%}
 <table>
     <tr>
         <th>CategoryID</th>
         <th>Category Name</th>
         <th>Description</th>
     </tr>
-    {%for row in data%}
+    {%for row in dati%}
         <tr>
             <td>{{row[0]}}</td>
             <td>{{row[1]}}</td>
