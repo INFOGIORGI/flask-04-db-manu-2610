@@ -24,12 +24,14 @@ def products():
 
     return render_template("products.html", titolo="Prodotti", prodotti = prodotti)
 
-def categories(categoryID):
+@app.route("/category/<categoryID>")
+def category(categoryID):
     cursor = mysql.connection.cursor()
-    query = "SELECT * from products where categoryID=?" #il ? è un placeholder
-    cursor.execute(query,(categoryID,))
+    query = "SELECT * FROM categories WHERE categoryID="+categoryID
+    cursor.execute(query)
     dati = cursor.fetchall()
 
-    return render_template("categories.html",titolo="Categorie", dati=dati)
+    print(dati)
+    return render_template("category.html",dati=dati)
 
 app.run(debug=True)
